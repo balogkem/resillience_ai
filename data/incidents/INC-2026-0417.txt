@@ -1,0 +1,1 @@
+At 02:14 the overnight Faster Payments batch failed. Root cause: the HSM cluster in DC-2 Slough lost connectivity after a firmware update. Fraud scoring also timed out because the Fraud Engine signs its model calls through the same HSM cluster. Payments resumed at 05:40 after the firmware was rolled back. Mortgage applications were slower than usual that morning.
