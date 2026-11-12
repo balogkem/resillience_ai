@@ -1,2 +1,33 @@
-# resillience_ai
-AI-assisted digital twin for operational resilience. Models an organisation’s dependencies as a graph, simulates disruptions (N-1 failure propagation), and uses an LLM to extract new dependencies from incident reports, with schema validation and human approval. Synthetic data only!
+# ResilienCE AI
+
+AI-assisted digital twin for operational resilience. It models an organisation's dependencies as a graph, simulates disruptions (N-1 failure propagation), and uses an LLM to extract new dependencies from incident reports. Every proposal goes through schema validation and human approval.
+
+**Synthetic data only.** "Northbridge Bank" is fictional.
+
+> Principle: the LLM proposes, the graph disposes, and a human approves.
+
+## Structure
+
+| Folder    | Purpose |
+|-----------|---------|
+| `engine/` | NetworkX twin: data model, graph loading, (soon) cascade simulation and scoring |
+| `ai/`     | LLM incident extraction: output schema and (soon) the extractor and validator |
+| `app/`    | FastAPI back end |
+| `data/`   | Synthetic organisation and sample incident reports |
+| `tests/`  | pytest suite |
+| `docs/`   | Design notes and roadmap |
+
+## Run locally
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows  (macOS/Linux: source .venv/bin/activate)
+pip install -r requirements.txt
+
+pytest                         # run tests
+uvicorn app.main:app --reload  # API at http://127.0.0.1:8000/docs
+```
+
+## Status
+
+v0.1: project skeleton. The graph loads and the API serves it. Simulation, the LLM and the UI are next. See [docs/roadmap.md](docs/roadmap.md).
