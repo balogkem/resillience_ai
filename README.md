@@ -13,11 +13,16 @@ AI-assisted digital twin for operational resilience. It models an organisation's
 | `engine/` | NetworkX twin: data model, graph loading, (soon) cascade simulation and scoring |
 | `ai/`     | LLM incident extraction: output schema and (soon) the extractor and validator |
 | `app/`    | FastAPI back end |
+| `frontend/` | React (Vite) UI: live dependency graph drawn from the API |
 | `data/`   | Synthetic organisation and sample incident reports |
 | `tests/`  | pytest suite |
 | `docs/`   | Design notes and roadmap |
 
 ## Run locally
+
+You need two terminals: one for the API and one for the UI.
+
+**Terminal 1: API (Python)**
 
 ```bash
 python -m venv .venv
@@ -28,6 +33,16 @@ pytest                         # run tests
 uvicorn app.main:app --reload  # API at http://127.0.0.1:8000/docs
 ```
 
+**Terminal 2: UI (Node 18+)**
+
+```bash
+cd frontend
+npm install                    # first time only
+npm run dev                    # UI at http://localhost:5173
+```
+
+The UI calls `/api/...`, and Vite forwards those requests to the API on port 8000. If the API isn't running, the UI shows "API offline".
+
 ## Status
 
-v0.1: project skeleton. The graph loads and the API serves it. Simulation, the LLM and the UI are next. See [docs/roadmap.md](docs/roadmap.md).
+v0.1: skeleton. The graph loads, the API serves it and the UI draws it live. Simulation and the LLM are next. See [docs/roadmap.md](docs/roadmap.md).
