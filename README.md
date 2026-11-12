@@ -2,7 +2,7 @@
 
 AI-assisted digital twin for operational resilience. It models an organisation's dependencies as a graph, simulates disruptions (N-1 failure propagation), and uses an LLM to extract new dependencies from incident reports. Every proposal goes through schema validation and human approval.
 
-**Synthetic data only.** "Northbridge Bank" is fictional.
+**Synthetic data only.** "Forks Bank" is fictional.
 
 > Principle: the LLM proposes, the graph disposes, and a human approves.
 

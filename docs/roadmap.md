@@ -2,7 +2,7 @@
 
 Milestones for the proof of concept. Each one should land as one or more commits.
 
-- [x] **v0.1 Skeleton**: repo layout, data model, synthetic Northbridge Bank, graph loader, FastAPI `/health` and `/graph`, tests
+- [x] **v0.1 Skeleton**: repo layout, data model, synthetic Forks Bank, graph loader, FastAPI `/health` and `/graph`, tests
 - [ ] **v0.2 Cascade engine**: grouped-redundancy failure propagation in waves (`engine/simulate.py`)
 - [ ] **v0.3 Scoring and SPOF detection**: resilience score (0-100), single points of failure, affected business services
 - [ ] **v0.4 Scenarios API**: power loss, supplier outage, cyber, cloud region; `POST /simulate`

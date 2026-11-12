@@ -8,7 +8,7 @@ import networkx as nx
 from engine.models import Organisation
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-DEFAULT_ORG = DATA_DIR / "northbridge_bank.json"
+DEFAULT_ORG = DATA_DIR / "forks_bank.json"
 
 
 def load_organisation(path: Path = DEFAULT_ORG) -> Organisation:

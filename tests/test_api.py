@@ -11,5 +11,5 @@ def test_health():
 
 def test_summary():
     body = client.get("/graph/summary").json()
-    assert body["organisation"] == "Northbridge Bank"
+    assert body["organisation"] == "Forks Bank"
     assert body["components"] == 23

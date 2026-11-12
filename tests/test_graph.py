@@ -4,7 +4,7 @@ from engine.graph import build_graph, load_organisation, summary
 from engine.models import Dependency, Node, Organisation
 
 
-def test_northbridge_loads():
+def test_forks_bank_loads():
     g = build_graph(load_organisation())
     s = summary(g)
     assert s["synthetic"] is True
